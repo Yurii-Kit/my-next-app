@@ -1,12 +1,15 @@
 /* components/Header/Header.module.css */
 
 .header {
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
-    padding: 12px;
+    padding: 16px;
     border-block-end: 1px solid #ccc;
+    margin-bottom: 32px;
+    background-color: #f8f8f8;
 }
 
 .navigation {
