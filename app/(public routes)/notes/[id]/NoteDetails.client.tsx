@@ -2,10 +2,14 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 import { getSingleNote } from '@/lib/api';
 import css from './NoteDetails.client.module.css';
 
 const NoteDetailsClient = () => {
+  const router = useRouter();
+
   const { id } = useParams<{ id: string }>();
 
   const {
@@ -18,6 +22,13 @@ const NoteDetailsClient = () => {
     refetchOnMount: false,
   });
 
+  const handleGoBack = () => {
+    const isSure = confirm('Are you sure?');
+    if (isSure) {
+      router.back();
+    }
+  };
+
   if (isLoading) return <p className={css.noteLoading}>Loading...</p>;
 
   if (error || !note) return <p className={css.noteError}>Some error..</p>;
@@ -29,6 +40,7 @@ const NoteDetailsClient = () => {
   return (
     <div className={css.noteWrapper}>
       <div className={css.noteDetails}>
+        <button onClick={handleGoBack}>Back</button>
         <h2 className={css.noteTitle}>{note.title}</h2>
         <p className={css.noteContent}>{note.content}</p>
         <p className={css.noteDate}>{formattedDate}</p>
