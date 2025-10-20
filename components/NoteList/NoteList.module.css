@@ -1,8 +1,17 @@
-.noteList {
+/* .noteList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
     margin: 0;
     list-style: none;
+} */
+
+.noteList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0;
+    list-style: none;
+
 }

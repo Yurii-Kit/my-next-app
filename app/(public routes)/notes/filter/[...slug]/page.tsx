@@ -2,6 +2,7 @@
 
 import { getNotes } from '@/lib/api';
 import NoteList from '@/components/NoteList/NoteList';
+import css from './page.module.css';
 
 type Props = {
   params: Promise<{ slug?: string[] }>;
@@ -17,7 +18,7 @@ const NotesByCategory = async ({ params }: Props) => {
   const response = await getNotes(category);
 
   return (
-    <div>
+    <div className={css.notelist}>
       <h1>Notes List</h1>
       {response?.notes?.length > 0 ? (
         <NoteList notes={response.notes} />
