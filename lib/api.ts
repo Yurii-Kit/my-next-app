@@ -18,12 +18,17 @@ export type Note = {
   userId: string | null;
   createdAt: string;
   updatedAt: string;
-  category?: Category;
 };
 
 export type NoteListResponse = {
   notes: Note[];
   total: number;
+};
+
+export type NewNoteData = {
+  title: string;
+  content: string;
+  categoryId: string;
 };
 
 axios.defaults.baseURL = 'https://next-docs-9f0504b0a741.herokuapp.com';
@@ -42,5 +47,10 @@ export const getSingleNote = async (id: string) => {
 
 export const getCategories = async () => {
   const res = await axios<Category[]>('/categories');
+  return res.data;
+};
+
+export const createNote = async (data: NewNoteData) => {
+  const res = await axios.post<Note>('/notes', data);
   return res.data;
 };

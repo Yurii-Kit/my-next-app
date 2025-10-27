@@ -1,22 +1,5 @@
 // components/NoteItem/NoteItem.tsx
 
-// import Link from 'next/link';
-// import { Note } from '@/lib/api';
-
-// type Props = {
-//   item: Note;
-// };
-
-// const NoteItem = ({ item }: Props) => {
-//   return (
-//     <li>
-//       <Link href={`/notes/${item.id}`}>{item.title}</Link>
-//     </li>
-//   );
-// };
-
-// export default NoteItem;
-
 import Link from 'next/link';
 import { Note } from '@/lib/api';
 import css from './NoteItem.module.css';
@@ -28,7 +11,7 @@ type Props = {
 const NoteItem = ({ item }: Props) => {
   return (
     <li className={css.card}>
-      <Link href={`/notes/${item.id}`} className={css.link}>
+      <Link href={`/notes/${item.id}`} className={css.link} scroll={false}>
         <h3 className={css.title}>{item.title}</h3>
         <p className={css.content}>
           {item.content.length > 100
