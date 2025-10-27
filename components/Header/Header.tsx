@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { getCategories } from '@/lib/api';
 import CategoriesMenu from '../CategoriesMenu/CategoriesMenu';
+import AuthNavigation from '../AuthNavigation/AuthNavigation';
 import css from './Header.module.css';
 
 const Header = async () => {
@@ -27,6 +28,8 @@ const Header = async () => {
           <li>
             <Link href="/about">About</Link>
           </li>
+          {/* Відображаємо компонент */}
+          <AuthNavigation />
         </ul>
       </nav>
     </header>
