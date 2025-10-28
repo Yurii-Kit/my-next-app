@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Home = () => {
   return (
-    <section>
+    <section className="main">
       <h1>Welcome to Home</h1>
       <p>This is the home page.</p>
       <Image

@@ -1,5 +1,5 @@
 // "use server";!!!!!!!!!!!!!!!!
-import { getNotes } from '@/lib/api';
+import { getNotes } from '@/lib/api/api';
 import NoteList from '@/components/NoteList/NoteList';
 import css from './page.module.css';
 

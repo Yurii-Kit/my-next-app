@@ -27,7 +27,7 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={roboto.variable}>
         <TanStackProvider>
           <AuthProvider>

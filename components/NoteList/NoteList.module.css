@@ -1,18 +1,37 @@
-/* .noteList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-    margin: 0;
-    list-style: none;
-} */
-
 .noteList {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* завжди 2 стовпці на десктопі */
+    gap: 24px;
+    padding: 24px;
     margin: 0;
     list-style: none;
+    background: var(--background);
+}
 
+/* Hover ефект для нотаток */
+.noteList>li {
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.noteList>li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Для планшетів і маленьких екранів */
+@media (max-width: 1024px) {
+    .noteList {
+        grid-template-columns: 1fr;
+        /* один стовпець */
+        padding: 16px;
+        gap: 16px;
+    }
+}
+
+/* Для великих екранів можна збільшити gap */
+@media (min-width: 1600px) {
+    .noteList {
+        gap: 32px;
+    }
 }

@@ -1,6 +1,4 @@
-// lib/api.ts
-
-import axios from 'axios';
+import { nextServer } from './api';
 
 export type Category = {
   id: string;
@@ -30,15 +28,6 @@ export type NewNoteData = {
   content: string;
   categoryId: string;
 };
-
-// //axios.defaults.baseURL = 'https://next-docs-9f0504b0a741.herokuapp.com';
-// axios.defaults.baseURL = 'http://localhost:3000/api';
-
-// Створюємо інстанс axios
-const nextServer = axios.create({
-  baseURL: 'http://localhost:3000/api',
-  withCredentials: true, // дозволяє axios працювати з cookie
-});
 
 // export const getNotes = async (categoryId?: string) => {
 //   const res = await axios.get<NoteListResponse>('/notes', {

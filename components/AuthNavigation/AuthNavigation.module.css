@@ -1,0 +1,62 @@
+.authItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userEmail {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.logoutButton {
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.logoutButton:hover {
+    background-color: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.authLink {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.authLink:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .authItem {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .logoutButton {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .authLink {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .userEmail {
+        font-size: 13px;
+    }
+}

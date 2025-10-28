@@ -1,5 +1,10 @@
 .list {
-
-    padding: 0 16px;
+    padding: 32px;
     margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+    .list {
+        padding: 16px;
+    }
 }

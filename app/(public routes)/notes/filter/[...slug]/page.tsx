@@ -1,6 +1,6 @@
 // app/notes/filter/[...slug]/page.tsx
 
-import { getNotes } from '@/lib/api';
+import { getNotes } from '@/lib/api/clientApi';
 import NoteList from '@/components/NoteList/NoteList';
 import css from './page.module.css';
 

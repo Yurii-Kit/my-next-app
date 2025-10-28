@@ -26,7 +26,6 @@ export async function GET() {
         Cookie: cookieStore.toString(), // перетворюємо cookie у рядок
       },
     });
-
     // Якщо бекенд повернув нові токени — встановлюємо їх
     const setCookie = apiRes.headers['set-cookie'];
     if (setCookie) {

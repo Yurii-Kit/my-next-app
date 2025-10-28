@@ -1,18 +1,33 @@
 .wrapper {
     display: flex;
-    gap: 30px;
 
-    border-bottom: 1px solid #ccc;
-
-
+    align-items: flex-start;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+    min-height: 100vh;
 }
 
 .aside {
-    min-width: 200px;
-    max-width: 300px;
-    padding: 16px;
-    border-right: 1px solid #ccc;
-    background-color: #f8f8f8;
+    min-width: 260px;
+    max-width: 280px;
+    padding: 24px 20px;
+    border-right: 1px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.aside::-webkit-scrollbar {
+    width: 6px;
+}
+
+.aside::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
 }
 
 .aside ul {
@@ -21,7 +36,35 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 600;
+    gap: 12px;
+}
+
+.aside ul li a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.aside ul li a:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .aside {
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        height: auto;
+        position: static;
+    }
 }

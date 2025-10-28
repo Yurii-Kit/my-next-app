@@ -5,7 +5,7 @@ import {
   HydrationBoundary,
   QueryClient,
 } from '@tanstack/react-query';
-import { getSingleNote } from '@/lib/api';
+import { getSingleNote } from '@/lib/api/api';
 import NoteDetailsClient from './NoteDetails.client';
 
 type Props = {
